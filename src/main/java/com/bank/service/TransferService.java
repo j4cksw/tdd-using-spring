@@ -17,11 +17,12 @@ package com.bank.service;
 
 import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
+import com.bank.service.internal.ServiceTimeException;
 
 public interface TransferService {
 
     TransferReceipt transfer(double amount, String srcAcctId, String destAcctId)
-            throws InsufficientFundsException;
+            throws InsufficientFundsException, Exception, ServiceTimeException;
 
     void setMinimumTransferAmount(double minimumTransferAmount);
 }
